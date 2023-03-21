@@ -13,9 +13,8 @@ const Layout = (Component) => {
 
     return (
       <div className={`${theme}`}>
-        <header className='flex justify-between px-3 py-4 sm:px-6 md:px-12 font-semibold shadow'>
+        <header className='flex justify-between px-3 py-4 sm:px-6 md:px-12 font-semibold shadow element'>
           <h2 className='text-xl'>Where in the world?</h2>
-          <p>{theme}</p>
           <p
             className='flex items-center gap-1 text-base'
             onClick={() => {
@@ -28,11 +27,13 @@ const Layout = (Component) => {
               }
             }}
           >
-            {theme === "light" ? <BsMoon /> : <BsFillMoonFill/>}
-            <span className="select-none">Dark Mode</span>
+            {theme === "light" ? <BsMoon /> : <BsFillMoonFill />}
+            <span className='select-none'>Dark Mode</span>
           </p>
         </header>
-        <Component />
+        <main className="px-3 py-4 sm:px-6 md:px-12">
+          <Component />
+        </main>
       </div>
     );
   }
