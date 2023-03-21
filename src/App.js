@@ -1,9 +1,17 @@
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import routes from "./components/routes";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-6xl">Hello world</h1>
+    <div>
+      <Router>
+        <Routes>
+          {routes.map((route, index) => (
+            <Route path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </Router>
     </div>
   );
 }
