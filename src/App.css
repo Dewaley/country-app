@@ -24,6 +24,10 @@
   background-color: var(--dark-mode-elements);
 }
 
+.light .element {
+    background-color: var(--light-mode-elements);
+}
+
 .dark main {
   background-color: var(--dark-mode-background);
   min-height: 91vh;
@@ -31,4 +35,5 @@
 
 .light main {
   background-color: var(--light-mode-background);
+  min-height: 91vh;
 }
