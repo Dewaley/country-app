@@ -32,7 +32,11 @@ const Homepage = () => {
               <p>Filter by Region</p>
               <BsChevronDown />
             </div>
-            <div className={`absolute left-0 top-14 flex flex-col gap-1 w-full p-3 text-sm element rounded ${dropDown ? "flex" : "hidden"}`}>
+            <div
+              className={`absolute left-0 top-14 flex flex-col gap-1 w-full p-3 text-sm element rounded ${
+                dropDown ? "flex" : "hidden"
+              }`}
+            >
               <p>Africa</p>
               <p>America</p>
               <p>Asia</p>
@@ -41,7 +45,7 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div className="flex"></div>
+        <div className='flex'></div>
       </div>
     </div>
   );

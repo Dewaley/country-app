@@ -31,7 +31,7 @@ const Layout = (Component) => {
             <span className='select-none'>Dark Mode</span>
           </p>
         </header>
-        <main className="px-3 py-4 sm:px-6 md:px-12">
+        <main className='px-3 py-4 sm:px-6 md:px-12'>
           <Component />
         </main>
       </div>
