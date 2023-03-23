@@ -1,10 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import { TbSearch } from "react-icons/tb";
 import Layout from "../components/Layout";
+import CountryServices from "../services/CountryServices";
+import CountryCard from "../components/CountryCard";
 
 const Homepage = () => {
   const [dropDown, setDropDown] = useState(false);
+  const [filter, setFilter] = useState("");
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    if (filter === "") {
+      CountryServices.getAllCountries().then((res) => {
+        console.log(res.data);
+        setCountries(res.data);
+      });
+    }
+  }, [filter]);
 
   return (
     <div>
@@ -45,7 +58,18 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div className='flex'></div>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+          {countries.map((country) => (
+            <CountryCard
+              img={country.flags.png}
+              imgAlt={country.flags.alt}
+              name={country.name.common}
+              population={country.population}
+              region={country.region}
+              capital={country.capital[0]}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
